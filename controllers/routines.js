@@ -38,11 +38,15 @@ const routinesController = {
         const deletedRoutine = await Routine.findByIdAndDelete(req.params.id)
         res.redirect('/routines')
     },
-    edit: async (req, red) => {
+    edit: async (req, res) => {
         const routines = await Routine.findById(req.params.id)
         res.render('routines/edit', {
         routines: routines
         })
+    },
+    update: async (req, res) => {
+        await Routine.findByIdAndUpdate(req.params.id, req.body)
+        res.redirect(`${req.params.id}`)
     }
 }
 

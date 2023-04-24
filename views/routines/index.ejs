@@ -2,9 +2,20 @@
 
     <h1>Home Page</h1>
     <% routines.forEach((r)=> { %>
-        <p> <%= r.name %> </p>
+        <h4><a href="/routines/<%=r._id%>"><%=r.name%></a></h4>
+        <p><%= r._id %></p>
+        <p><%= r.description %></p>
     <% }) %>
 
+
+    <form action="/routines/<%=routines._id%>/edit" method="PUT">
+        <input type="submit" value="Edit: <%=routines.name%>">
+    </form>
+
+
+    <form action="/routines/<%=routines._id%>/new">
+        <input type="submit" value="Make a new routine">
+      </form>
 
 
 <%- include('../partials/footer') %>
