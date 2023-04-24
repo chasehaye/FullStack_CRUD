@@ -29,12 +29,21 @@ const routinesController = {
         res.redirect('/routines')
     },
     show: async (req, res) => {
-        const routine = await Routine.findById(req.params.id)
+        const routines = await Routine.findById(req.params.id)
         res.render('routines/show', {
-            routine: routine
+            routines: routines
+        })
+    },
+    delete: async (req, res) => {
+        const deletedRoutine = await Routine.findByIdAndDelete(req.params.id)
+        res.redirect('/routines')
+    },
+    edit: async (req, red) => {
+        const routines = await Routine.findById(req.params.id)
+        res.render('routines/edit', {
+        routines: routines
         })
     }
-
 }
 
 
