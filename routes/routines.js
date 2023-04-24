@@ -3,6 +3,7 @@ const router = express.Router()
 const routinesController = require('../controllers/routines')
 const passport = require('passport');
 
+
 router.get('/', routinesController.index)
 router.get('/new', routinesController.new)
 router.post('/', routinesController.create)

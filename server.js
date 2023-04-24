@@ -25,6 +25,9 @@ app.use(express.urlencoded({ extended: false }))
 app.use(cookieParser());
 app.use(methodOverride('_method'));
 
+app.get('/', (req, res)=>{
+    res.render('home-page')
+});
 
 app.use(session({
     secret: process.env.SECRET,
@@ -54,9 +57,6 @@ app.use(function(err, req, res, next) {
   
     res.status(err.status || 500);
     res.render('error');
-});
-app.get('/', (req, res)=>{
-    res.render('home-page')
 });
 app.listen(3000, ()=>{
     console.log("express is running")
