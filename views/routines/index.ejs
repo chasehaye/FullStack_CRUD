@@ -1,7 +1,9 @@
 <%- include('../partials/head') %>
 
     <h1>Home Page</h1>
-
+    <% routines.forEach((r)=> { %>
+        <p> <%= r.name %> </p>
+    <% }) %>
 
 
 

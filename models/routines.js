@@ -1,21 +1,6 @@
 const mongoose = require('mongoose');
 const Exercise = require('./exercise');
 
-const exerciseSchema = new mongoose.Schema({
-    name: String,
-    description: String,
-    dayOfWeek: String,
-    reps: {
-        type: Number
-    },
-    sets: {
-        type: Number
-    },
-    duration: {
-        type: Number
-    }
-})
-
 const routineSchema = new mongoose.Schema({
     name: String,
     description: String,
