@@ -56,7 +56,7 @@ app.use(function(err, req, res, next) {
     res.render('error');
 });
 app.get('/', (req, res)=>{
-    res.redirect('/routines')
+    res.render('home-page')
 });
 app.listen(3000, ()=>{
     console.log("express is running")
