@@ -1,8 +1,10 @@
-const mongoose = require('mongoose')
-const routineSchema = new mongoose.Schema({
+const mongoose = require('mongoose');
+const Exercise = require('./exercise');
+
+const exerciseSchema = new mongoose.Schema({
     name: String,
     description: String,
-    daysOfWeek: String,
+    dayOfWeek: String,
     reps: {
         type: Number
     },
@@ -10,9 +12,17 @@ const routineSchema = new mongoose.Schema({
         type: Number
     },
     duration: {
-        Number
+        type: Number
     }
+})
 
+const routineSchema = new mongoose.Schema({
+    name: String,
+    description: String,
+    exercise: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Exercise'
+    }],
 })
 
 const Routine = mongoose.model('Routine', routineSchema);
