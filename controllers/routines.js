@@ -1,19 +1,14 @@
-const Routine = require('../models/routines')
-const Exercise = require('../models/exercise');
-const seedData = require('../models/seedExercise')
-
-
-
-
-
-
-
-
+const Routine = require('../models/routines'); 
+const Exercise = require('../models/exercises');
+const seedData = require('../models/seedRoutines'); 
 
 const routinesController = {
     seed: async (req, res)=>{
-        Exercise.insertMany(seedData);
-        res.render('routines/index')
+        await Routine.insertMany(seedData);
+        const routines = await Routine.find();
+        res.render('routines/index', {
+            routines: routines
+        })
     },
     index: async (req, res)=>{
         const routines = await Routine.find();   
@@ -21,32 +16,60 @@ const routinesController = {
             routines: routines
         })
     },
-    new: (req, res) => {
-        res.render('routines/new')
+    new: async (req, res) => {
+        try{ 
+            const exercises = await Exercise.find(); 
+            res.render('routines/new', {
+            exercises: exercises
+            })
+        }catch(err){
+            res.send(err)
+        }
     },
     create: async (req, res) => {
-        const newRoutine = await Routine.create(req.body);
-        res.redirect('/routines')
+        try{
+            const newRoutine = await Routine.create(req.body);
+            res.redirect('/routines')
+        }catch(err){
+            console.log(err);
+            res.send(err)
+        }
     },
     show: async (req, res) => {
-        const routines = await Routine.findById(req.params.id)
+        const routine = await Routine.findById(req.params.id)
+        const exercises = await Exercise.find(); 
         res.render('routines/show', {
-            routines: routines
+            routine: routine, 
+            exercises: exercises
         })
     },
     delete: async (req, res) => {
-        const deletedRoutine = await Routine.findByIdAndDelete(req.params.id)
-        res.redirect('/routines')
+        try{
+            const deletedRoutine = await Routine.findByIdAndDelete(req.params.id)
+            res.redirect('/routines')
+        }catch(err){
+            res.send(err)
+        }
     },
     edit: async (req, res) => {
-        const routines = await Routine.findById(req.params.id)
-        res.render('routines/edit', {
-        routines: routines
-        })
+        try{ 
+            const routine = await Routine.findById(req.params.id)
+            const exercises = await Exercise.find(); 
+            res.render('routines/edit', {
+            routine: routine,
+            exercises: exercises
+            })
+        }catch(err){
+            res.send(err)
+        }
     },
     update: async (req, res) => {
-        await Routine.findByIdAndUpdate(req.params.id, req.body)
-        res.redirect(`${req.params.id}`)
+        try{
+            await Routine.findByIdAndUpdate(req.params.id, req.body)
+            res.redirect(`${req.params.id}`)
+        }catch(err){
+            res.send(err)
+        }
     }
 }
 

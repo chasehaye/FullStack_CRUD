@@ -1,13 +1,19 @@
 <%- include('../partials/head') %>
 
-    <h1>Edit Page</h1>
-
-    <form action="/routines/<%=routines._id%>?_method=PUT" method="POST">
+    <h1>Edit Routine Page</h1>
+    <form action="/routines/<%=routine._id%>?_method=PUT" method="POST">
     <label for="name">Name:</label>
-    <input type="text" name="name" value="<%= routines.name %>">
+    <input type="text" name="name" value="<%= routine.name %>">
     <br>
     <label for="description">Description:</label>
-    <input type="text" name="description" value="<%= routines.description %>">
+    <input type="text" name="description" value="<%= routine.description %>">
+    <br>
+    <label for="exercise">Exercise:</label>
+    <select id="select" name="exercises">
+            <% for(let i=0; i < exercises.length; i++) { %>
+             <option value="<%= exercises[i].id %>"><%= exercises[i].name %></option>
+            <% } %>
+    </select>
     <br>
     <input type="submit" value="Update Routine">
 </form>

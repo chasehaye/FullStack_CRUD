@@ -1,13 +1,18 @@
 <%- include('../partials/head') %>
 
-    <h1>New Page</h1>
+    <h1>New Routine Page</h1>
 
     <form action="/routines" method="POST">
         <label for="name">Name:</label><input type="text" name="name"><br>
         <label for="description">Description:</label><input type="text" name="description"><br>
         <label for="exercise">Exercise:</label>
-        <input type="submit" value="Create Item">
-      </form>
+        <select id="select" name="exercises">
+          <% for(var i=0; i < exercises.length; i++) { %>
+           <option value="<%= exercises[i].id %>"><%= exercises[i].name %></option>
+          <% } %>
+        </select>
+        <br>
+        <input type="submit" value="Create Routine">
+    </form>
     
-
 <%- include('../partials/footer') %>

@@ -1,0 +1,10 @@
+<%- include('../partials/head') %>
+
+    <h1>View Exercises Page</h1>
+    <% exercises.forEach((e)=> { %>
+        <h4><a href="/exercises/<%=e._id%>"><%=e.name%></a></h4>
+        <p><%= e.description %></p>
+        <p><%= e.dayOfWeek %></p>
+    <% }) %>
+
+<%- include('../partials/footer') %>

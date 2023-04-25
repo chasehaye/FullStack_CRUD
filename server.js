@@ -12,7 +12,9 @@ require('./config/passport');
 
 
 
-const routinesRouter = require('./routes/routines')
+const routinesRouter = require('./routes/routines');
+const exercisesRouter = require('./routes/exercises'); 
+//const exercisesController = require('./controllers/exercises');
 const authRouter = require('./routes/userAuth')
 
 
@@ -45,8 +47,7 @@ app.get('/', (req, res)=>{
 });
 app.use('/routines', routinesRouter)
 app.use('/', authRouter)
-
-
+app.use('/exercises', exercisesRouter)
 
 
 app.use(function(req, res, next) {

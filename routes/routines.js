@@ -24,8 +24,7 @@ router.get('/:id', routinesController.show)
 router.delete('/:id', routinesController.delete)
 router.get('/:id/edit', routinesController.edit)
 router.put('/:id', routinesController.update)
-
-router.get('/seed/1/2/3/4', routinesController.seed)
+router.get('/seed/1/2/3', routinesController.seed)
 
 
 
