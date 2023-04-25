@@ -3,6 +3,9 @@ const router = express.Router()
 const routinesController = require('../controllers/routines')
 const passport = require('passport');
 
+router.get('/auth/google', routinesController.login)
+router.get('/oauth2callback', routinesController.callBack)
+router.get('/logout', routinesController.logout)
 
 router.get('/', routinesController.index)
 router.get('/new', routinesController.new)
@@ -16,24 +19,6 @@ router.get('/seed/1/2/3/4', routinesController.seed)
 
 
 
-router.get('/auth/google', passport.authenticate(
-    'google',
-    {
-      scope: ['profile', 'email'],
-    }
-  ));
-  router.get('/oauth2callback', passport.authenticate(
-    'google',
-    {
-      successRedirect: '/routines',
-      failureRedirect: '/'
-    }
-  ));
-  router.get('/logout', function(req, res){
-    req.logout(function() {
-      res.redirect('/');
-    });
-  });
 
 
 

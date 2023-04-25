@@ -25,10 +25,6 @@ app.use(express.urlencoded({ extended: false }))
 app.use(cookieParser());
 app.use(methodOverride('_method'));
 
-app.get('/', (req, res)=>{
-    res.render('home-page')
-});
-app.use('/routines', routinesRouter)
 
 app.use(session({
     secret: process.env.SECRET,
@@ -42,6 +38,13 @@ app.use(function (req, res, next) {
     res.locals.user = req.user;
     next();
 });
+
+app.get('/', (req, res)=>{
+    res.render('home-page')
+});
+app.use('/routines', routinesRouter)
+
+
 
 
 
