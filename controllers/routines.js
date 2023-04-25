@@ -1,7 +1,6 @@
 const Routine = require('../models/routines')
 const Exercise = require('../models/exercise');
 const seedData = require('../models/seedExercise')
-const passport = require('passport');
 
 
 
@@ -41,35 +40,13 @@ const routinesController = {
     },
     edit: async (req, res) => {
         const routines = await Routine.findById(req.params.id)
-        res.render(`routines/edit`, {
+        res.render('routines/edit', {
         routines: routines
         })
     },
     update: async (req, res) => {
         await Routine.findByIdAndUpdate(req.params.id, req.body)
         res.redirect(`${req.params.id}`)
-    },
-    logout: function(req, res){
-        req.logout(function() {
-          res.redirect('/routines');
-        });
-    },
-    login: (req,res) => {
-        passport.authenticate(
-        'google',
-        {
-          scope: ['profile', 'email'],
-        }
-        )
-    },
-    callBack: (req,res) => {
-        passport.authenticate(
-            'google',
-            {
-              successRedirect: '/routines',
-              failureRedirect: '/routines'
-            }
-        )
     }
 }
 

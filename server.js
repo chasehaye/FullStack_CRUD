@@ -48,6 +48,23 @@ app.use('/routines', routinesRouter)
 
 
 
+
+///
+
+app.get('/oauth2callback', passport.authenticate(
+    'google',
+    {
+      successRedirect: '/',
+      failureRedirect: '/'
+    }
+))
+
+///
+
+
+
+
+
 app.use(function(req, res, next) {
     next(createError(404));
   });
