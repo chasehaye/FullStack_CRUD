@@ -13,6 +13,7 @@ require('./config/passport');
 
 
 const routinesRouter = require('./routes/routines')
+const authRouter = require('./routes/userAuth')
 
 
 
@@ -43,24 +44,7 @@ app.get('/', (req, res)=>{
     res.render('home-page')
 });
 app.use('/routines', routinesRouter)
-
-
-
-
-
-
-///
-
-app.get('/oauth2callback', passport.authenticate(
-    'google',
-    {
-      successRedirect: '/',
-      failureRedirect: '/'
-    }
-))
-
-///
-
+app.use('/', authRouter)
 
 
 
