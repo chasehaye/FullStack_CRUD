@@ -31,7 +31,8 @@
 <%- include('./partials/footer') %>
 
 
-
-<a href="/routines/auth/google" class="login">LOG IN</a>
-<a href="/routines/logout">LOG OUT</a>
-<%= user %>
+<% if (user) { %>
+<a href="/logout">LOG OUT</a>
+<% } else { %>
+<a href="/auth/google" class="login">LOG IN</a>
+<% } %>

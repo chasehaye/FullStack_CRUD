@@ -1,20 +1,20 @@
 const express = require('express')
 const router = express.Router()
 const routinesController = require('../controllers/routines')
-const passport = require('passport');
+// const passport = require('passport');
 
 ///
-router.get('/auth/google',  passport.authenticate(
-    'google',
-    {
-        scope: ['profile', 'email'],
-    }
-))
-router.get('/logout', function(req, res){
-    req.logout(function() {
-      res.redirect('/');
-    });
-});
+// router.get('/auth/google',  passport.authenticate(
+//     'google',
+//     {
+//         scope: ['profile', 'email'],
+//     }
+// ))
+// router.get('/logout', function(req, res){
+//     req.logout(function() {
+//       res.redirect('/');
+//     });
+// });
 ///
 
 router.get('/', routinesController.index)
