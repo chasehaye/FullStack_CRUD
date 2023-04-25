@@ -28,6 +28,7 @@ app.use(methodOverride('_method'));
 app.get('/', (req, res)=>{
     res.render('home-page')
 });
+app.use('/routines', routinesRouter)
 
 app.use(session({
     secret: process.env.SECRET,
@@ -36,15 +37,11 @@ app.use(session({
 }));
 app.use(passport.initialize());
 app.use(passport.session());
+
 app.use(function (req, res, next) {
     res.locals.user = req.user;
     next();
 });
-app.use(express.static(path.join(__dirname, 'public')));
-
-
-
-app.use('/routines', routinesRouter)
 
 
 

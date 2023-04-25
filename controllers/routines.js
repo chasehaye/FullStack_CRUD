@@ -40,7 +40,7 @@ const routinesController = {
     },
     edit: async (req, res) => {
         const routines = await Routine.findById(req.params.id)
-        res.render('routines/edit', {
+        res.render(`routines/edit`, {
         routines: routines
         })
     },

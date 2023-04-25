@@ -25,10 +25,15 @@ router.get('/auth/google', passport.authenticate(
   router.get('/oauth2callback', passport.authenticate(
     'google',
     {
-      successRedirect: '/routines/home-page',
-      failureRedirect: '/routines/home-page'
+      successRedirect: '/routines',
+      failureRedirect: '/'
     }
   ));
+  router.get('/logout', function(req, res){
+    req.logout(function() {
+      res.redirect('/');
+    });
+  });
 
 
 
