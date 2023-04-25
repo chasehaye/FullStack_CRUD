@@ -9,7 +9,9 @@ const logger = require('morgan');
 const session = require('express-session');
 const passport = require('passport')
 const methodOverride = require('method-override');
-const routinesRouter = require('./routes/routines')
+const routinesRouter = require('./routes/routines');
+const exercisesRouter = require('./routes/exercises'); 
+//const exercisesController = require('./controllers/exercises');
 
 
 app.set('views', path.join(__dirname, 'views'));
@@ -24,8 +26,7 @@ app.use(express.urlencoded({ extended: false }))
 app.use(cookieParser());
 
 app.use('/routines', routinesRouter)
-
-
+app.use('/exercises', exercisesRouter)
 
 
 app.use(function(err, req, res, next) {

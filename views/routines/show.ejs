@@ -1,11 +1,16 @@
 <%- include('../partials/head') %>
 
-    <h1>Show Page</h1>
-    <p><%=routines.name%></p>
-    <p><%=routines.description%></p>
+    <h1>Show Routine Page</h1>
+    <p>Name: <%=routine.name%></p>
+    <p>Description: <%=routine.description%></p>
+    <p>Exercises: <%routine.exercise%></p>
 
-    <form action="/routines/<%=routines._id%>?_method=DELETE" method="POST">
-        <input type="submit" value="Delete: <%=routines.name%>">
+    <form action="/routines/<%=routine._id%>/edit" method="PUT">
+        <input type="submit" value="Edit: <%=routine.name%>">
+    </form>
+
+    <form action="/routines/<%=routine._id%>?_method=DELETE" method="POST">
+        <input type="submit" value="Delete: <%=routine.name%>">
     </form>
 
     
