@@ -59,6 +59,13 @@ const routinesController = {
             routine: routine,
             exercises: exercises
             })
+            await Routine.findOneAndUpdate(
+                {
+                    $push: {
+                        exercises: exercises
+                    }
+                }
+            )
         }catch(err){
             res.send(err)
         }

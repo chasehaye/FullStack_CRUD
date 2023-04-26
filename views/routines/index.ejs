@@ -10,9 +10,9 @@
     <% routines.forEach((r)=> { %>
         <h4><a href="/routines/<%=r._id%>"><%=r.name%></a></h4>
         <p><%= r.description %></p>
-        <p><%= r.exercises %></p>
+        <p><%=r.exercises[0]%></p>
         <form action="/routines/<%=r._id%>/edit" method="PUT">
-            <input type="submit" value="Edit <%=r.name%>">
+            <input type="submit" value="Edit: <%=r.name%>">
         </form>
     <% }) %>
 

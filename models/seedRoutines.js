@@ -5,7 +5,7 @@ module.exports = [
     },
     {
         name: 'Routine 2',
-        description: 'Execise plan for Tuesday',
+        description: 'Exercise plan for Tuesday',
     },
     {
         name: 'Routine 3',
