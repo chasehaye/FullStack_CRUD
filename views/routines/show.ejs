@@ -3,7 +3,7 @@
     <h1>Show Routine Page</h1>
     <p>Name: <%=routine.name%></p>
     <p>Description: <%=routine.description%></p>
-    <p>Exercises: <%routine.exercise%></p>
+    <p><%=routine.exercises[0]%></p>
 
     <form action="/routines/<%=routine._id%>/edit" method="PUT">
         <input type="submit" value="Edit: <%=routine.name%>">

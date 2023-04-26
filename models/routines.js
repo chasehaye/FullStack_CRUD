@@ -4,7 +4,7 @@ const Exercise = require('./exercises');
 const routineSchema = new mongoose.Schema({
     name: String,
     description: String,
-    exercise: [{
+    exercises: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Exercise'
     }],
