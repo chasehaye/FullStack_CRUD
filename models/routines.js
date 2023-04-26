@@ -8,6 +8,14 @@ const routineSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Exercise'
     }],
+    user: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User',
+        required: true
+    },
+    userName: String,
+    userAvatar: String
+
 })
 
 const Routine = mongoose.model('Routine', routineSchema);

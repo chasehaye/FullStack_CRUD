@@ -11,9 +11,18 @@
         <h4><a href="/routines/<%=r._id%>"><%=r.name%></a></h4>
         <p><%= r.description %></p>
         <p><%=r.exercises[0]%></p>
+
+
+        <% if (user?._id.equals(r.user)) { %>
         <form action="/routines/<%=r._id%>/edit" method="PUT">
             <input type="submit" value="Edit: <%=r.name%>">
         </form>
+        <% } %>
+        <!-- below is the user data I chose to add for possible display-->
+        <p>below are my test tags for ouath</p>
+        <p><%=r.user%></p>
+        <p><%=r.userName%></p>
+        <p><%=r.userAvatar%></p>
     <% }) %>
 
 <%- include('../partials/footer') %>
