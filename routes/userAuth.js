@@ -1,9 +1,8 @@
 const express = require('express')
 const router = express.Router()
-const authController = require('../controllers/routines')
 const passport = require('passport');
 
-//Oauth user routes
+//Oauth user routes and functions
 
 router.get('/auth/google',  passport.authenticate(
     'google',

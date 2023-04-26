@@ -2,7 +2,7 @@ const express = require('express')
 const router = express.Router()
 const routinesController = require('../controllers/routines')
 const ensureLoggedIn = require('../controllers/ensureLoggedIn')
-
+// RESTful routes for routines
 router.get('/', routinesController.index)
 router.get('/new', routinesController.new)
 router.post('/', ensureLoggedIn, routinesController.create)
