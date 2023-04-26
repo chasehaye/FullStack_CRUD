@@ -28,6 +28,9 @@ const routinesController = {
     },
     create: async (req, res) => {
         try{
+            req.body.user = req.user._id;
+            req.body.userName = req.user.name;
+            req.body.userAvatar = req.user.avatar;
             const newRoutine = await Routine.create(req.body);
             res.redirect('/routines')
         }catch(err){

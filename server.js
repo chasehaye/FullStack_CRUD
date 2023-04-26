@@ -45,8 +45,8 @@ app.use(function (req, res, next) {
 app.get('/', (req, res)=>{
     res.render('home-page')
 });
-app.use('/routines', routinesRouter)
 app.use('/', authRouter)
+app.use('/routines', routinesRouter)
 app.use('/exercises', exercisesRouter)
 
 
