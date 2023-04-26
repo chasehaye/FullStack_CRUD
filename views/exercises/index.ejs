@@ -1,12 +1,13 @@
 <%- include('../partials/head') %>
 
     <h1>View Exercises Page</h1>
+    <section class="container">
     <% exercises.forEach((e)=> { %>
-        <h4><a href="/exercises/<%=e._id%>"><%=e.name%></a></h4>
+        <h4 href="/exercises/<%=e._id%>"><%=e.name%></h4>
         <p><%= e.description %></p>
         <p><%= e.dayOfWeek %></p>
     <% }) %>
-
+</section>
 <%- include('../partials/footer') %>
 
 
