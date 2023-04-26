@@ -8,7 +8,7 @@
         <input type="submit" value="View exercises">
     </form>
     <% routines.forEach((r)=> { %>
-        <h4><a href="/routines/<%=r._id%>"><%=r.name%></a></h4>
+        <h4><a href="/routines/<%=r._id%>/edit"><%= r.name %></a></h4>
         <p><%= r.description %></p>
         <p><%=r.exercises[0]%></p>
 
