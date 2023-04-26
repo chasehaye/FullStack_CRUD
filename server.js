@@ -15,6 +15,7 @@ require('./config/passport');
 const routinesRouter = require('./routes/routines');
 const exercisesRouter = require('./routes/exercises'); 
 //const exercisesController = require('./controllers/exercises');
+// Delete11
 const authRouter = require('./routes/userAuth')
 
 
