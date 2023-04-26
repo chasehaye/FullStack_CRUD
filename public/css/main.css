@@ -8,13 +8,33 @@
 body {
 
   font-family: 'Roboto', 'Helvetica', 'Sans-serif';
-  margin: auto;
+  margin: auto=;
   padding: auto;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.7;
-  color: #353535;
   text-align:center;
+}
+
+
+
+
+
+button {
+  cursor: pointer;
+  color: #fff;
+  font-size: 0.9rem;
+  text-align: center;
+  padding: 1.25rem 3rem;
+  border: none;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-family: 'Roboto', 'Helvetica', 'Sans-serif';
+  letter-spacing: 2px;
+}
+
+a {
+  text-decoration: none;
 }
 
 
@@ -30,7 +50,11 @@ section, footer {
   text-align: center;
 }
 
-.
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  position: relative;
+}
 
 .flex {
   display: flex;
@@ -85,15 +109,6 @@ h2{
 
 }
 
-#form{
-  margin: auto;
-  margin-bottom: 10rem;
-  border: solid black;
-  padding: 3rem 5rem;
-  border-radius: 2rem;
-
-}
-
 #user-routines{
   margin: 0 auto;
 
@@ -114,7 +129,6 @@ p{
   font-weight: bold;
   font-size: 1.2rem;
 }
-
 .bd-placeholder-img {
   font-size: 1.125rem;
   text-anchor: middle;
@@ -239,6 +253,168 @@ padding: 3rem 5rem;
 border-radius: 2rem;
 }
 
+#user-routines{
+margin: 0 auto;
+
+}
+.form-control{
+border: solid black .05rem;
+}
+
+.form-check-input{
+border: solid black .01rem;
+}
+
+p{
+margin: auto 5rem;
+}
+
+.form-label{
+font-weight: bold;
+font-size: 1.2rem;
+}
+
+
+
+
+
+/* start: hero section styles */
+#hero {
+  position: relative;
+  padding: 0;
+}
+
+header {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  padding: 1rem 0;
+  z-index: 1;
+}
+
+header nav {
+  max-width: 950px;
+  margin: 0 auto;
+  position: relative;
+}
+
+header nav ul.flex {
+  align-items: center;
+  justify-content: space-around;
+}
+
+header nav ul li a {
+  color: #fff;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.top-gym-logo {
+  margin: 0 2rem;
+  border: 2px solid #fff;
+  padding: 15px 10px 7px;
+  text-align: center;
+  letter-spacing: 2px;
+}
+
+.top-gym-logo a {
+  font-size: 28px;
+  text-transform: uppercase;
+  color: #fff;
+  line-height: 20px;
+}
+
+.top-gym-logo a:hover {
+  text-decoration: none;
+}
+
+#header-logo-mobile {
+  display: none;
+}
+
+#search {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  margin-top: -7px;
+  width: auto;
+  padding: 0;
+  font-size: 15px;
+  border: none;
+  background: transparent;
+  color: #fff;
+}
+
+#hamburger-menu {
+  background-color: transparent;
+  border: 1px solid #fff;
+  padding: 3px 5px;
+  width: 30px;
+  cursor: pointer;
+  margin: 0 1rem;
+  display: none;
+}
+
+#hamburger-menu .strip {
+  display: block;
+  height: 1px;
+  background-color: #fff;
+  margin: 4px 0;
+}
+
+#hero-slider .hero-slide-item {
+  position: relative;
+  height: 895px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top center;
+}
+
+
+
+#features .box {
+  width: 31%;
+}
+
+
+#trainers-slider {
+  width: 90%;
+  margin: 0 auto;
+}
+
+#trainers-slider .slick-slide {
+  padding: 0 20px;
+}
+
+#trainers-slider .trainer-slider-item img {
+  width: 100%;
+
+
+#schedule-services .flex > div {
+  width: 32%;
+  box-sizing: border-box;
+}
+
+#schedule-services .flex strong {
+  display: block;
+  color: #212122;
+  font-size: 0.85rem;
+  opacity: 0.6;
+  letter-spacing: 4px;
+}
+
+.upcoming-classes-box {
+  border: 2px solid #E5E7F3;
+  padding: 4rem 2.5rem 2.5rem;
+}
+
+.upcoming-classes-box h4 {
+  margin-bottom: 2rem;
+}
 
 
 @media (min-width: 768px) {

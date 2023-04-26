@@ -1,21 +1,4 @@
-:root {
-    --main-white: #f0f0f0;
-    --main-red: #be3144;
-    --main-blue: #45567d;
-    --main-gray: #303841;
-  }
-  
-  * {
-    margin: 0;
-    padding: 0;
-  }
-  
-  
-  *,
-  *::before,
-  *::after {
-    box-sizing: inherit;
-  }
+
   
   html {
     font-size: 62.5%;
@@ -183,7 +166,7 @@
   }
   
   .code {
-    color: var(--main-blue);
+
     transition: color 0.3s ease-out;
   }
   .workout:hover .code {
