@@ -36,6 +36,10 @@ body {
   border-top-right-radius: 0;
 }
 
+.form-signin button{
+text-decoration: none;
+}
+
 .bd-placeholder-img {
   font-size: 1.125rem;
   text-anchor: middle;
@@ -44,7 +48,14 @@ body {
   user-select: none;
 }
 
+link{
+  text-decoration: none;
 
+}
+link:active{
+    text-decoration: none;
+
+}
 
 .b-example-divider {
   width: 100%;
@@ -100,21 +111,26 @@ body {
   --bs-btn-active-bg: #5a23c8;
   --bs-btn-active-border-color: #5a23c8;
 }
-.bd-mode-toggle {
-  z-index: 1500;
-}
+
 
 .login {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 34px;
+  text-decoration: none;
 }
 
 nav > img {
 width: 34px;
 object-fit: contain;
 margin-right: auto;
+}
+
+
+.navbar-button{
+  text-decoration: none;
+
 }
 
 @media (min-width: 768px) {
