@@ -1,7 +1,7 @@
 const Routine = require('../models/routines'); 
 const Exercise = require('../models/exercises');
 const seedData = require('../models/seedRoutines'); 
-
+// RESTful route controller functions for routines
 const routinesController = {
     seed: async (req, res)=>{
         await Routine.insertMany(seedData);

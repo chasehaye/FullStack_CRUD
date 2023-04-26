@@ -1,3 +1,4 @@
+// seed excerises into the database
 module.exports = [
     {
         name: 'BenchPress',

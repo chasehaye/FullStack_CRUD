@@ -1,3 +1,4 @@
+// seed routines into a database for testing
 module.exports = [
     {
         name: 'Routine 1',
