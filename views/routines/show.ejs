@@ -6,7 +6,9 @@
     <p>Name: <%=routine.name%></p>
     <p>Description: <%=routine.description%></p>
     <h4>Exercises:</h4>
-    <p><%=routine.exercises[0]%></p>
+    <% Object.keys(routine.exercises).forEach(function(prop) { %>
+        <p><%- routine.exercises[prop] %><p>
+    <% }); %>
     
     <% if (user?._id.equals(routine.user)) { %>
         <p>hello i am owned by the user that is currently logged in</p>
