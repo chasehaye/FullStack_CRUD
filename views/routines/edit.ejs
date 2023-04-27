@@ -10,7 +10,7 @@
     <br>
     <label for="currentExercises">Current Exercises:</label>
     <% Object.keys(routine.exercises).forEach(function(prop) { %>
-        <p><%- routine.exercises[prop] %></p>
+        <p><a href="/exercises/<%=routine.exercises[prop]%>"><%- routine.exercises[prop] %></a></p>
     <% }); %>
     <h4>Select Exercises:</h4>
     <select multiple id="select" name="exercises">
