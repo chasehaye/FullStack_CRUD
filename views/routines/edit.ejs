@@ -8,9 +8,12 @@
     <label for="description">Description:</label>
     <input type="text" name="description" value="<%= routine.description %>">
     <br>
-    <h4>Edit Exercises:</h4>
-    <label for="exercise">Exercise:</label>
-    <select id="select" name="exercises">
+    <label for="currentExercises">Current Exercises:</label>
+    <% Object.keys(routine.exercises).forEach(function(prop) { %>
+        <p><%- routine.exercises[prop] %></p>
+    <% }); %>
+    <h4>Select Exercises:</h4>
+    <select multiple id="select" name="exercises">
             <% for(let i=0; i < exercises.length; i++) { %>
              <option value="<%= exercises[i].id %>"><%= exercises[i].name %></option>
             <% } %>

@@ -11,9 +11,11 @@ const routinesController = {
         })
     },
     index: async (req, res)=>{
-        const routines = await Routine.find();   
+        const routines = await Routine.find(); 
+        const exercises = await Exercise.find();  
         res.render('routines/index', {
-            routines: routines
+            routines: routines,
+            exercises: exercises
         })
     },
     new: async (req, res) => {
