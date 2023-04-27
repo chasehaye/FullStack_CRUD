@@ -11,7 +11,7 @@
         <h4><a href="/routines/<%=r._id%>/edit"><%= r.name %></a></h4>
         <p><%= r.description %></p>
         <% Object.keys(r.exercises).forEach(function(prop) { %>
-            <p><%- r.exercises[prop] %></p>
+            <p><a href="/exercises/<%=r.exercises[prop]%>"><%- r.exercises[prop] %></a></p>
         <% }); %>
 
 

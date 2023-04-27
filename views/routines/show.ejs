@@ -7,7 +7,7 @@
     <p>Description: <%=routine.description%></p>
     <h4>Exercises:</h4>
     <% Object.keys(routine.exercises).forEach(function(prop) { %>
-        <p><%- routine.exercises[prop] %><p>
+        <p><a href="/exercises/<%=routine.exercises[prop]%>"><%- routine.exercises[prop] %></a></p>
     <% }); %>
     
     <% if (user?._id.equals(routine.user)) { %>
