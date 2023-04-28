@@ -1,5 +1,5 @@
-# FullStack_CRUD
-short app description
+# HSZ
+A social app that allows users to create and post their own routines and allows the user to view their own routines and pthers routines. It will function similar to a social media app and has the potential for many features that encourage interaction
 
 # Wire Frame
 https://lucid.app/lucidchart/0df54117-15b7-4679-b0da-a17708a745e4/edit?invitationId=inv_49a7c7ba-d00c-4eb0-af65-1358895707f2&referringApp=slack&page=uP1BopAARZY8#
