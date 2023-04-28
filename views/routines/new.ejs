@@ -1,8 +1,7 @@
 <%- include('../partials/head') %>
 
-    <h1>New Routine Page</h1>
 
-    <form action="/routines" method="POST">
+    <!-- <form action="/routines" method="POST">
         <label for="name">Name:</label><input type="text" name="name"><br>
         <label for="description">Description:</label><input type="text" name="description"><br>
         <h4>Select Exercises:</h4>
@@ -13,15 +12,15 @@
         </select>
         <br>
         <input type="submit" value="Create Routine">
-    </form>
+    </form> -->
 
 
+    <h1>Create a Routine</h1>
 
     
-     <!-- <div class="container">
+   
     <main>
       <div class="py-4 text-center">
-        <h2>Create a Routine</h2>
       </div>
         <div class="col-md-6" id="create-routine">
           <form action="/routines" method="POST">
@@ -35,7 +34,15 @@
               <input type="text" name="description"class="form-control">
             </div>
             <br>
-            <div class="day-checkbox">
+            <label for="exercise">Exercise:</label>
+            <br>
+            <select id="select" name="exercises">
+              <% for(var i=0; i < exercises.length; i++) { %>
+               <option value="<%= exercises[i].id %>"><%= exercises[i].name %></option>
+              <% } %>
+            </select>
+            <br>
+            <br>            <div class="day-checkbox">
             <label for= "dayOfWeek" class="form-label">Weekly Schedule</label>
             <br>
             <div class="form-check form-check-inline">
@@ -80,11 +87,9 @@
               </div>
   
     
-     
             <button class="w-100 btn btn-dark btn-lg" type="submit">Create Routine</button>
           </form>
         </div>
     </main>
 
-     -->
 <%- include('../partials/footer') %>
