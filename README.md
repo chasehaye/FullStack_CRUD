@@ -1,9 +1,16 @@
 # HSZ
 A social app that allows users to create and post their own routines and allows the user to view their own routines and pthers routines. It will function similar to a social media app and has the potential for many features that encourage interaction
-
+Website:
+https://hsz.fly.dev/
 # Wire Frame
+Data Model:
+https://lucid.app/lucidchart/8574b16d-807c-4c1a-be6a-c34ac0526831/edit?invitationId=inv_fc39924c-bce0-4647-9f0f-96c8f8da9b77&referringApp=slack&page=0_0#
+Wire Frame Routines:
 https://lucid.app/lucidchart/0df54117-15b7-4679-b0da-a17708a745e4/edit?invitationId=inv_49a7c7ba-d00c-4eb0-af65-1358895707f2&referringApp=slack&page=uP1BopAARZY8#
+Wire Frame Exercises:
 https://lucid.app/lucidchart/ce6d3036-e6ce-4043-bd59-f7b508656f06/edit?invitationId=inv_62df0091-83d4-494d-b6b4-265af06d20ce&referringApp=slack&page=uP1BopAARZY8#
+Trello:
+https://trello.com/b/vxMxz9Bs/developer-firm-hsz
 
 # Getting Started
 
