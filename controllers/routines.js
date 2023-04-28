@@ -44,7 +44,7 @@ const routinesController = {
     show: async (req, res) => {
         const routine = await Routine.findById(req.params.id)
                                      .populate('exercises')
-        const exercises  = await Exercise.find(); 
+        const exercises = await Exercise.find(); 
         res.render('routines/show', {
             routine: routine, 
             exercises: exercises
