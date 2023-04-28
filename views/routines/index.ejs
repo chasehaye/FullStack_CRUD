@@ -1,14 +1,9 @@
 <%- include('../partials/head') %>
 
-    <h1>View Routines Page</h1>
-    <form action="/routines/<%=routines._id%>/new">
-        <input type="submit" value="Make a new routine">
-    </form>
-    <form action="/exercises">
-        <input type="submit" value="View exercises">
-    </form>
+    <h1>Your Routines</h1>
+
     <% routines.forEach((r)=> { %>
-        <h4><a href="/routines/<%=r._id%>/edit"><%= r.name %></a></h4>
+        <h4> <a href="/routines/<%=r._id%>"><%= r.name %></a></h4>
         <p><%= r.description %></p>
         <% Object.keys(r.exercises).forEach(function(prop) { %>
             <p><a href="/exercises/<%=r.exercises[prop]._id%>"><%- r.exercises[prop].name %></a></p>
@@ -21,11 +16,7 @@
         </form>
         <% } %>
         <!-- below is the user data I chose to add for possible display-->
-        <p>below are my test tags for ouath</p>
-        <p><%=r.user%></p>
-        <p><%=r.userName%></p>
-        <p><%=r.userAvatar%></p>
+        <p>Created by: <%=r.userName%></p>
     <% }) %>
-
 <%- include('../partials/footer') %>
 
