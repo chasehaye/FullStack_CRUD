@@ -11,7 +11,8 @@ const routinesController = {
         })
     },
     index: async (req, res)=>{
-        const routines = await Routine.find(); 
+        const routines = await Routine.find() 
+                                      .populate('exercises')
         const exercises = await Exercise.find();  
         res.render('routines/index', {
             routines: routines,
@@ -42,6 +43,7 @@ const routinesController = {
     },
     show: async (req, res) => {
         const routine = await Routine.findById(req.params.id)
+                                     .populate('exercises')
         const exercises = await Exercise.find(); 
         res.render('routines/show', {
             routine: routine, 
@@ -59,6 +61,7 @@ const routinesController = {
     edit: async (req, res) => {
         try{ 
             const routine = await Routine.findById(req.params.id)
+                                         .populate('exercises')
             const exercises = await Exercise.find(); 
             res.render('routines/edit', {
             routine: routine,
